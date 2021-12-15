@@ -1,0 +1,89 @@
+// begin section hero
+.section-hero {
+    @include center;
+    width: 100vw;
+    height: 100vh;
+
+    .container {
+        width: 70rem;
+        padding: 3rem;
+        border-radius: .5rem;
+        @include bg-color(color-white);
+        border: .4rem solid rgba($color-gray, .6);
+        > header {
+            text-align: center
+        }
+        .to-container-genius {
+            @include bg-color(color-black);
+            margin: 3rem auto 0 auto;
+            display: grid;
+            grid-template-areas: 'green red' 'yellow blue';
+            grid-gap: 1rem;
+            width: 40rem;
+            height: 40rem;
+            border-radius: 20rem;
+            border: 1rem solid $color-black;
+            overflow: hidden;
+        }
+        .to-button-genius {
+            outline: none;
+            background-color: transparent;
+            margin: 0;
+            border: 0;
+            padding: 0;
+            cursor: pointer;
+            @include transition;
+
+            &.green {
+                grid-area: green;
+                @include bg-color(color-green);
+                &:hover, &.active {
+                    background-color: darken($color-green, 50%);
+                }
+            }
+            &.red {
+                grid-area: red;
+                @include bg-color(color-red);
+                &:hover, &.active {
+                    background-color: darken($color-red, 50%);
+                }
+            }
+            &.yellow {
+                grid-area: yellow;
+                @include bg-color(color-yellow);
+                &:hover, &.active {
+                    background-color: darken($color-yellow, 50%);
+                }
+            }
+            &.blue {
+                grid-area: blue;
+                @include bg-color(color-blue);
+                &:hover, &.active {
+                    background-color: darken($color-blue, 50%);
+                }
+            }
+        }
+    }
+    #message-return {
+        display: block;
+        font-size: 1.8rem;
+        &.info {color: #007bff;}
+        &.success {color: #28a745;}
+        &.danger {color: #dc3545;}
+    }
+    #init-game-genius {
+        display: block;
+        margin: 3rem auto 0 auto;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: .5rem;
+        background-color: #ffc107;
+        font-weight: bold;
+        cursor: pointer;
+
+        &:hover {
+            background-color: darken(#ffc107, 10%);
+        }
+    }
+}
+// end section hero
